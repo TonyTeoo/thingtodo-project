@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Things to do</title>
+    <style>
+        body {
+            background-color: #fff;
+        }
+        .input-custom:focus {
+            outline: none !important;
+            box-shadow: none;
+        }
+
+        input,
+        button,
+        textarea,
+        select {
+            outline: none;
+            background-color: transparent;
+            border: none;
+        }
+        .subscribe {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 100rem;
+            border: 1px solid silver;
+            padding: 8px;
+        }
+        .subscribe-email {
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: 500;
+            padding-left: 18px;
+        }
+        .subscribe-button {
+            width: 33px;
+            height: 33px;
+            border-radius: 100rem;
+            background-color: #3b71fe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .link-footer {
+            text-decoration: none;
+        }
+        .btn1-custom:focus {
+            text-decoration: none;
+            border: none;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+        .btn2-custom {
+            width: 100px !important;
+            height: fit-content !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- ======================= NAVBAR ======================== -->
+    
+    <div class="container-fluid d-grid gap-2 d-md-flex justify-content-center my-3 shadow p-3 mb-5 bg-body rounded">
+        <button type="button" class="btn btn-primary custom" style="color: #fff;">Thing to do</button>
+        <button type="button" class="btn btn-light custom" style="color: #777e90;">Travel Guide</button>
+        <button type="button" class="btn btn-light custom" style="color: #777e90;">Tours</button>
+    </div>
+
+    <!-- ======================= Champagne Bar ======================== -->
+    <div class="container"> 
+        <div class="row">
+
+            <!-- ======================= LEFT-FORM ======================== -->
+
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+
+                <h5 class="text-title mb-3">Search location or property</h5>
+
+                <form class="d-flex flex-row position-relative mb-4">
+                    <input type="search" class="form-control input-custom" id="example-search-input" placeholder="Search location or property">
+                
+                    <button class="btn btn-outline-success border-0 position-absolute end-0" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Show side trips
+                    </label>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Show items in my trips
+                    </label>
+                </div>
+
+                <h5 class="text-title mb-3">Activity type</h5>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Hidden Gems
+                    </label>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Shopping
+                    </label>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Historic Sites
+                    </label>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Nightlife
+                    </label>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Tours
+                    </label>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Outdoors
+                    </label>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        U Meseums
+                    </label>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Parks
+                    </label>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Tours
+                    </label>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Outdoors
+                    </label>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        U Museums
+                    </label>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Parks
+                    </label>
+                </div>
+            </div>
+    
+            <!-- ======================= RIGHT-CARD ======================== -->
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 d-flex flex-column align-items-xl-end align-items-lg-end align-items-md-end align-items-sm-end align-items-center justify-content-center">
+                
+                <div class="card mb-3 rounded-start-5 bg-light border-0" style="max-width: 740px;">
+                    <div class="row g-0 d-flex flex-row align-items-center">
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <img src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?q=80&w=1315&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-5" alt="..." style="object-fit: cover; width: 100%; height: 250px;">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 class="card-title">CRU Champagne Bar</h5>
+                                <div class="d-flex align-items-start mt-3">
+                                    <img class="me-2" src="./images/star.png" style="width: 15px" />
+                                    <small class="card-text text-muted">4.8 (122 reviews)  Tours</small>
+                                </div>
+                                
+                                <p class="card-text mt-3">
+                                    <small class="text-muted">
+                                        Unique 360 panoramic views of the amazing
+                                        Bangkok skyline, inspired from the best 
+                                        Champagne listings worldwide.
+                                    </small>
+                                </p>
+
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button type="button" class="btn btn-primary btn-sm px-4 py-1 rounded-5">
+                                        Add
+                                    </button>
+                                    <button type="button" class="btn btn-secondary btn-sm px-2 py-1 rounded-2">
+                                        Price $61
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3 rounded-start-5 bg-light border-0" style="max-width: 740px;">
+                    <div class="row g-0 d-flex flex-row align-items-center">
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-5" alt="..." style="object-fit: cover; width: 100%; height: 250px;">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 class="card-title">CRU Champagne Bar</h5>
+                                <div class="d-flex align-items-start mt-3">
+                                    <img class="me-2" src="./images/star.png" style="width: 15px" />
+                                    <small class="card-text text-muted">4.8 (122 reviews)  Tours</small>
+                                </div>
+                                
+                                <p class="card-text mt-3">
+                                    <small class="text-muted">
+                                        Unique 360 panoramic views of the amazing
+                                        Bangkok skyline, inspired from the best 
+                                        Champagne listings worldwide.
+                                    </small>
+                                </p>
+
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button type="button" class="btn btn-primary btn-sm px-4 py-1 rounded-5">
+                                        Add
+                                    </button>
+                                    <button type="button" class="btn btn-secondary btn-sm px-2 py-1 rounded-2">
+                                        Price $61
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3 rounded-start-5 bg-light border-0" style="max-width: 740px;">
+                    <div class="row g-0 d-flex flex-row align-items-center">
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <img src="https://images.unsplash.com/photo-1510784722466-f2aa9c52fff6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-5" alt="..." style="object-fit: cover; width: 100%; height: 250px;">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 class="card-title">CRU Champagne Bar</h5>
+                                <div class="d-flex align-items-start mt-3">
+                                    <img class="me-2" src="./images/star.png" style="width: 15px" />
+                                    <small class="card-text text-muted">4.8 (122 reviews)  Tours</small>
+                                </div>
+                                
+                                <p class="card-text mt-3">
+                                    <small class="text-muted">
+                                        Unique 360 panoramic views of the amazing
+                                        Bangkok skyline, inspired from the best 
+                                        Champagne listings worldwide.
+                                    </small>
+                                </p>
+
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button type="button" class="btn btn-primary btn-sm px-4 py-1 rounded-5">
+                                        Add
+                                    </button>
+                                    <button type="button" class="btn btn-secondary btn-sm px-2 py-1 rounded-2">
+                                        Price $61
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3 rounded-start-5 bg-light border-0" style="max-width: 740px;">
+                    <div class="row g-0 d-flex flex-row align-items-center">
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-5" alt="..." style="object-fit: cover; width: 100%; height: 250px;">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <h5 class="card-title">CRU Champagne Bar</h5>
+                                <div class="d-flex align-items-start mt-3">
+                                    <img class="me-2" src="./images/star.png" style="width: 15px" />
+                                    <small class="card-text text-muted">4.8 (122 reviews)  Tours</small>
+                                </div>
+                                
+                                <p class="card-text mt-3">
+                                    <small class="text-muted">
+                                        Unique 360 panoramic views of the amazing
+                                        Bangkok skyline, inspired from the best 
+                                        Champagne listings worldwide.
+                                    </small>
+                                </p>
+
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button type="button" class="btn btn-primary btn-sm px-4 py-1 rounded-5">
+                                        Add
+                                    </button>
+                                    <button type="button" class="btn btn-secondary btn-sm px-2 py-1 rounded-2">
+                                        Price $61
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+        </div>
+    </div>
+
+    <!-- ======================= HR ======================== -->
+    
+    <div class="container">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-5 border-bottom my-5"></div>
+    </div>
+
+    <!-- ======================= CATS LOVE ======================== -->
+
+    <div class="container my-5 bg-light">
+        <div class="row my-3">
+            <h5 class="text-center fs-3 fw-bold text-muted mb-5">Cats love</h5>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-12 border-0 position-relative mb-2">
+                
+                <div class="image-patong" style="max-width: auto;">
+                    <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-4" alt="..." style="object-fit: cover; width: 100%; height: 350px;">
+                </div>
+                
+                <div class="card-body position-absolute bottom-0 start-0 ms-4 mb-3 ps-2">
+                    <h5 class="card-title text-white fs-8rem">Patong</h5>
+                    <div class="d-flex align-items-start mt-2">
+                        <img class="me-2" src="./images/star.png" style="width: 15px" />
+                        <small class="card-text text-white">4.8 (122 reviews)</small>
+                    </div> 
+                </div>
+                
+                
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-12 border-0 position-relative mb-2">
+                
+                <div class="image-patong" style="max-width: auto;">
+                    <img src="https://images.unsplash.com/photo-1561948955-570b270e7c36?q=80&w=1201&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-4" alt="..." style="object-fit: cover; width: 100%; height: 350px;">
+                </div>
+                
+                <div class="card-body position-absolute bottom-0 start-0 ms-4 mb-3 ps-2">
+                    <h5 class="card-title text-white">Patong</h5>
+                    <div class="d-flex align-items-start mt-3">
+                        <img class="me-2" src="./images/star.png" style="width: 15px" />
+                        <small class="card-text text-white">4.8 (122 reviews)</small>
+                    </div> 
+                </div>
+                
+                
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-12 border-0 position-relative mb-2">
+                
+                <div class="image-patong" style="max-width: auto;">
+                    <img src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?q=80&w=1036&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-4" alt="..." style="object-fit: cover; width: 100%; height: 350px;">
+                </div>
+                
+                <div class="card-body position-absolute bottom-0 start-0 ms-4 mb-3 ps-2">
+                    <h5 class="card-title text-white">Patong</h5>
+                    <div class="d-flex align-items-start mt-3">
+                        <img class="me-2" src="./images/star.png" style="width: 15px" />
+                        <small class="card-text text-white">4.8 (122 reviews)</small>
+                    </div> 
+                </div>
+                
+                
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-12 border-0 position-relative mb-2">
+                
+                <div class="image-patong" style="max-width: auto;">
+                    <img src="https://images.unsplash.com/photo-1571566882372-1598d88abd90?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D    " class="img-fluid rounded-4" alt="..." style="object-fit: cover; width: 100%; height: 350px;">
+                </div>
+                
+                <div class="card-body position-absolute bottom-0 start-0 ms-4 mb-3 ps-2">
+                    <h5 class="card-title text-white">Patong</h5>
+                    <div class="d-flex align-items-start mt-3">
+                        <img class="me-2" src="./images/star.png" style="width: 15px" />
+                        <small class="card-text text-white">4.8 (122 reviews)</small>
+                    </div> 
+                </div>
+                
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-12 border-0 position-relative mb-2">
+                
+                <div class="image-patong" style="max-width: auto;">
+                    <img src="https://plus.unsplash.com/premium_photo-1677545183884-421157b2da02?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-4" alt="..." style="object-fit: cover; width: 100%; height: 350px;">
+                </div>
+                
+                <div class="card-body position-absolute bottom-0 start-0 ms-4 mb-3 ps-2">
+                    <h5 class="card-title text-white fs-8rem">Patong</h5>
+                    <div class="d-flex align-items-start mt-2">
+                        <img class="me-2" src="./images/star.png" style="width: 15px" />
+                        <small class="card-text text-white">4.8 (122 reviews)</small>
+                    </div> 
+                </div>
+                
+                
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-12 border-0 position-relative mb-2">
+                
+                <div class="image-patong" style="max-width: auto;">
+                    <img src="https://images.unsplash.com/photo-1492370284958-c20b15c692d2?q=80&w=1049&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-4" alt="..." style="object-fit: cover; width: 100%; height: 350px;">
+                </div>
+                
+                <div class="card-body position-absolute bottom-0 start-0 ms-4 mb-3 ps-2">
+                    <h5 class="card-title text-white">Patong</h5>
+                    <div class="d-flex align-items-start mt-3">
+                        <img class="me-2" src="./images/star.png" style="width: 15px" />
+                        <small class="card-text text-white">4.8 (122 reviews)</small>
+                    </div> 
+                </div>
+                
+                
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-12 border-0 position-relative mb-2">
+                
+                <div class="image-patong" style="max-width: auto;">
+                    <img src="https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-4" alt="..." style="object-fit: cover; width: 100%; height: 350px;">
+                </div>
+                
+                <div class="card-body position-absolute bottom-0 start-0 ms-4 mb-3 ps-2">
+                    <h5 class="card-title text-white">Patong</h5>
+                    <div class="d-flex align-items-start mt-3">
+                        <img class="me-2" src="./images/star.png" style="width: 15px" />
+                        <small class="card-text text-white">4.8 (122 reviews)</small>
+                    </div> 
+                </div>
+                
+                
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-12 border-0 position-relative mb-2">
+                
+                <div class="image-patong" style="max-width: auto;">
+                    <img src="https://images.unsplash.com/photo-1560114928-40f1f1eb26a0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-4" alt="..." style="object-fit: cover; width: 100%; height: 350px;">
+                </div>
+                
+                <div class="card-body position-absolute bottom-0 start-0 ms-4 mb-3 ps-2">
+                    <h5 class="card-title text-white">Patong</h5>
+                    <div class="d-flex align-items-start mt-3">
+                        <img class="me-2" src="./images/star.png" style="width: 15px" />
+                        <small class="card-text text-white">4.8 (122 reviews)</small>
+                    </div> 
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+    <!-- ======================= HOSPITAL TITLE ======================== -->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 d-flex flex-column align-items-xl-start align-items-lg-start align-items-md-start align-items-sm-start align-items-center">
+                <h3 class="text-title">Bangkok- 3 nights</h3>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 d-flex flex-column align-items-xl-end align-items-lg-end align-items-md-end align-items-sm-end align-items-center">
+                <button class="text-primary rounded-5 px-5 py-2 fw-bold" style="background-color: rgb(235,241,255);">See day by day plan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================= HR ======================== -->
+    <div class="container">
+        <div class="mb-5 d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center border-bottom"></div>
+    </div>
+    <!-- ======================= HOSPITAL CARD ======================== -->
+    <div class="container">       
+        <div class="row d-flex flex-row align-items-center gap-3 gap-md-0 gap-lg-0 gap-xl-0">
+            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 d-flex justify-content-center">
+                <img src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?q=80&w=1315&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded-5" alt="..." style="object-fit: cover; width: 100%; max-height: 350px;">
+            </div>
+
+            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12">
+                <div class="row">
+                    <h3 class="card-title mb-3">City of Angels</h3>
+                    <p class="card-text text-muted mb-4">
+                        Enjoy cultural, historical, and culinary exploration during your holiday in Bangkok, the capital of Thailand and the most populous city in the country. Bangkok is known for shopping, historic sites,
+                    </p>
+                    <h5 class="card-title mb-3">Things to do in Bangkok</h5>
+                    <small class="text-muted mb-4">Shopping · Neighborhoods · Historic Sites · Parks</small>
+                </div>
+                
+                <div class="row bg-primary py-1 px-0 rounded-4 d-flex flex-row justify-content-between">
+                    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 mt-1 d-flex flex-column align-items-start">
+                        <button href="#" class="btn btn-primary bg-light py-2 px-1 rounded-3 btn1-custom">
+                            <i class="fa-solid fa-bed fa-2xl" style="color: #5c61ff;"></i>
+                        </button>
+                    </div>
+                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7 d-flex flex-column ms-3">
+                        <p class="text-light mb-2">Find placed to stay</p>
+                        <p class="text-light"><a href="#" class="text-reset"><i>Find placed to stay</i></a> with best proximity to your trip</p>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 mt-1 d-flex flex-column align-items-end">
+                        <button href="#" class="btn btn-sm bg-light text-primary rounded-3 btn2-custom">Sep 27 - 30</button>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+    <!-- ======================= HR ======================== -->
+    
+    <div class="container">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-5 border-bottom my-5"></div>
+    </div>
+    <!-- ======================= Explore All ======================== -->
+    
+    <div class="container d-flex justify-content-center my-5 py-5">
+        <div class="row">
+            <button type="button" class="btn btn-primary rounded-5 fs-5" style="width: 150px;">Explorer All</button>
+        </div>
+    </div>
+
+    <!-- ======================= Footer ======================== -->
+
+    <footer class="">
+        <div class="container text-center text-md-left">
+
+            <div class="row text-center text-md-left">
+                <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mt-3">
+                    <a href="#" style="width: fit-content">
+                        <img class="mb-4" src="./images/airtrav.png"/>
+                    </a>
+                    <p class="card-text mb-3 px-2">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem maxime veritatis modi, ipsa deleniti nam recusandae? Maiores, rem explicabo. Repellendus aperiam reiciendis incidunt ut tenetur perspiciatis voluptatem a sit atque?
+                    </p>
+                    <form class="subscribe mt-2">
+                        <input
+                            class="subscribe-email"
+                            type="text"
+                            placeholder="Enter your email"
+                        />
+                        <button type="submit" class="subscribe-button">
+                            <img src="./images/vector.png" />
+                        </button>
+                    </form>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mt-3">
+                    <h5 class="text-warning mb-4 font-weight-bold text-start">Services</h5>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Trip Planner</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Tour Planning</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Tour Guide</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Tour Package</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Tour advice</a>
+                    </p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-warning mb-4 font-weight-bold text-start">Support</h5>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Account</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Legal</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Contact</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Terms & Condition</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Privacy Policy</a>
+                    </p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-warning mb-4 font-weight-bold text-start">Business</h5>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Success</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">About Locato</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark text-end" style="text-decoration: none;">Blog</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark text-end" style="text-decoration: none;">Information</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark text-end" style="text-decoration: none;">Travel Guide</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- ======================= HR ======================== -->
+
+            <div class="container">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-5 mb-5 border-bottom"></div>
+            </div>
+
+            <!-- ======================= COPYRIGHT ======================== -->
+            
+            <div class="row align-items-center text-center">
+                <div class="col-md-7 col-lg-7 col-xl-7 col-12 col-sm-12">
+                    <p class="text-muted text-md-start text-lg-start text-sm-center text-center">
+                        Copyright© 2024 All rights reserved by
+                        <a href="#" style="text-decoration: none;">
+                        <strong class="text-warning">TonyTeos</strong>
+                        </a>
+                    </p>
+                </div>
+                <div class="col-md-5 col-lg-5 col-xl-5 col-12 col-sm-12">
+                    <div class="text-md-end text-lg-end text-sm-center text-center">
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                                <a href="#"><img src="./images/fb.png"></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#"><img src="./images/in.png"></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#"><img src="./images/line.png"></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#"><img src="./images/tw.png"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+   
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+    ></script>
+</body>
+</html>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Travel Guide</title>
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+        .custom {
+            width: 120px !important;
+        }
+        .custom-where-world {
+            display: flex;
+            align-items: top;
+            gap: 15px;
+        }
+        .custom-card {
+            position: relative;
+        }
+        .fr-40 {
+            display: table;
+            width: fit-content;
+            padding: 4px 8px;
+            background-color: rgb(91, 90, 90);
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            opacity: 0.7;
+        }
+        .popular-image-flex {
+            height: 185px;
+            position: relative;
+        }
+
+        .popular-overlay-flex {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: linear-gradient(24deg, rgba(4, 4, 4, 0.52) 0.23%, rgba(4, 4, 4, 0) 55.52%);
+            border-radius: 14px 14px 0 0;
+        }
+
+        .popular-img-flex {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 14px 14px 0 0;
+        }
+
+        .popular-lable-flex {
+            position: absolute;
+            right: 20px;
+            bottom: 0;
+            color: #f4f5f6;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 15px;
+            display: inline-flex;
+            border-radius: 30px;
+            background: var(--primary-primary, #3B71FE);
+            padding: 4px 18px;
+            height: 25px;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(50%);
+        }
+
+        input,
+        button,
+        textarea,
+        select {
+            outline: none;
+            background-color: transparent;
+            border: none;
+        }
+        .subscribe {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 100rem;
+            border: 1px solid silver;
+            padding: 8px;
+        }
+        .subscribe-email {
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: 500;
+            padding-left: 18px;
+        }
+        .subscribe-button {
+            width: 33px;
+            height: 33px;
+            border-radius: 100rem;
+            background-color: #3b71fe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .link-footer {
+            text-decoration: none;
+        }
+        @media screen and (max-width: 410px) {
+            .custom-where-world {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ======================= NAVBAR ======================== -->
+    
+    <div class="container-fluid d-grid gap-2 d-md-flex justify-content-center my-3 shadow p-3 mb-5 bg-body rounded">
+        <button type="button" class="btn btn-light custom" style="color: #777e90;">Thing to do</button>
+        <button type="button" class="btn btn-primary custom" style="color: #fff;">Travel Guide</button>
+        <button type="button" class="btn btn-light custom" style="color: #777e90;">Tours</button>
+    </div>
+    
+    <!-- ======================= IMAGE-SLIDE ======================== -->
+
+    <div class="container my-5 bg-light rounded-4">
+        <div class="row rounded-4 align-items-center">
+
+            <div class="col-lg-6 col-md-12 col-sm-12 py-3">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner rounded-4">
+                        <div class="carousel-item active">
+                            <img src="https://picsum.photos/250/150" class="d-block w-100 rounded-4" alt="..."/>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://picsum.photos/250/150" class="d-block w-100 rounded-4" alt="..."/>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://picsum.photos/250/150" class="d-block w-100 rounded-4" alt="..."/>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- ======================= IMAGE-SLIDE-TITLE ======================== -->
+            
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="card-body" style="max-width: 800px">
+                    <div class="custom-where-world">
+                        <h5 class="card-title">Where in the world :</h5>
+                        <p>Asia / Thailand / Bangkok</p>
+                    </div>
+
+                    <div class="col-12 gap-1 d-flex align-items-baseline">
+                        <img class="img-responsive" src="./images/star.png" style="width: 15px" />
+                        <h5 class="ms-2">4.8</h5>
+                        <p class="card-text text-muted fw-bold">(122 reviews)</p>
+                    </div>
+                    <p class="card-text mt-2">
+                        Sacred & Religious Sites · Shopping Malls · Gift & Specialty Shops
+                    </p>
+                    <h5 class="card-title mb-2">City of Angels</h5>
+                    <p class="card-text">
+                        Enjoy cultural, historical, and culinary exploration during your
+                        holiday in Bangkok, the capital of Thailand and the most populous
+                        city in the country. With over 8 million residents, Bangkok
+                        remains a sprawling metropolitan
+                    </p>
+                    <p class="card-text">In your trip Sep 28 - Oct 1</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ======================= HR ======================== -->
+
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center mb-5 border-bottom"></div>
+    </div>
+
+    <!-- ======================= CARD ITEMS ======================== -->
+
+    <div class="container-fluid my-5 bg-light">
+        <h5 class="my-5 text-center">Tour Items</h5>
+        <div class="row">
+
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card custom-card mb-4 border-0">
+                    <img src="https://picsum.photos/300/200" class="card-img-top" alt="..." />
+                    <small class="fr-40">From $40</small>
+                    <div class="card-body">
+                    <h6 class="card-title my-3">FLoating Markets Day Trip from Bangkok</h6>
+                    <div class="col-12 d-flex justify-content-between">
+                        <div class="col-6 gap-1 d-flex align-items-start">
+                        <img class="me-2" src="./images/star.png" style="width: 15px" />
+                        <small class="card-text text-muted">4.8 (122 reviews)</small>
+                        </div>
+
+                        <small>Duration: 9 hours</small>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-sm mt-3">
+                        Tours Price $61
+                    </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card custom-card mb-4 border-0">
+                    <img src="https://picsum.photos/300/200" class="card-img-top" alt="..." />
+                    <small class="fr-40">From $40</small>
+                    <div class="card-body">
+                    <h6 class="card-title my-3">FLoating Markets Day Trip from Bangkok</h6>
+                    <div class="col-12 d-flex justify-content-between">
+                        <div class="col-6 gap-1 d-flex align-items-start">
+                        <img class="me-2" src="./images/star.png" style="width: 15px" />
+                        <small class="card-text text-muted">4.8 (122 reviews)</small>
+                        </div>
+
+                        <small>Duration: 9 hours</small>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-sm mt-3">
+                        Tours Price $61
+                    </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card custom-card mb-4 border-0">
+                    <img src="https://picsum.photos/300/200" class="card-img-top" alt="..." />
+                    <small class="fr-40">From $40</small>
+                    <div class="card-body">
+                    <h6 class="card-title my-3">FLoating Markets Day Trip from Bangkok</h6>
+                    <div class="col-12 d-flex justify-content-between">
+                        <div class="col-6 gap-1 d-flex align-items-start">
+                        <img class="me-2" src="./images/star.png" style="width: 15px" />
+                        <small class="card-text text-muted">4.8 (122 reviews)</small>
+                        </div>
+
+                        <small>Duration: 9 hours</small>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-sm mt-3">
+                        Tours Price $61
+                    </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card custom-card mb-4 border-0">
+                    <img src="https://picsum.photos/300/200" class="card-img-top" alt="..." />
+                    <small class="fr-40">From $40</small>
+                    <div class="card-body">
+                    <h6 class="card-title my-3">FLoating Markets Day Trip from Bangkok</h6>
+                    <div class="col-12 d-flex justify-content-between">
+                        <div class="col-6 gap-1 d-flex align-items-start">
+                        <img class="me-2" src="./images/star.png" style="width: 15px" />
+                        <small class="card-text text-muted">4.8 (122 reviews)</small>
+                        </div>
+
+                        <small>Duration: 9 hours</small>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-sm mt-3">
+                        Tours Price $61
+                    </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card custom-card mb-4 border-0">
+                    <img src="https://picsum.photos/300/200" class="card-img-top" alt="..." />
+                    <small class="fr-40">From $40</small>
+                    <div class="card-body">
+                    <h6 class="card-title my-3">FLoating Markets Day Trip from Bangkok</h6>
+                    <div class="col-12 d-flex justify-content-between">
+                        <div class="col-6 gap-1 d-flex align-items-start">
+                        <img class="me-2" src="./images/star.png" style="width: 15px" />
+                        <small class="card-text text-muted">4.8 (122 reviews)</small>
+                        </div>
+
+                        <small>Duration: 9 hours</small>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-sm mt-3">
+                        Tours Price $61
+                    </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="card custom-card mb-4 border-0">
+                    <img src="https://picsum.photos/300/200" class="card-img-top" alt="..." />
+                    <small class="fr-40">From $40</small>
+                    <div class="card-body">
+                    <h6 class="card-title my-3">FLoating Markets Day Trip from Bangkok</h6>
+                    <div class="col-12 d-flex justify-content-between">
+                        <div class="col-6 gap-1 d-flex align-items-start">
+                        <img class="me-2" src="./images/star.png" style="width: 15px" />
+                        <small class="card-text text-muted">4.8 (122 reviews)</small>
+                        </div>
+
+                        <small>Duration: 9 hours</small>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-sm mt-3">
+                        Tours Price $61
+                    </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ======================= Popular things to do in Bangkok ======================== -->
+    
+    <div class="container my-5">
+        <h5 class="my-5">Popular things to do in Bangkok</h5>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="card custom-card mb-4 border-0 bg-light">
+                    <div class="popular-image-flex">
+                        <div class="popular-overlay-flex">
+                            <img src="https://picsum.photos/200/130" class="popular-img-flex" alt="..." />
+                            <small class="popular-lable-flex">Must See</small>
+                        </div>     
+                    </div>
+                    
+                    <div class="card-body">
+                        <small class="time-popular text-muted">Sep 28 10:00 AM - 1:00 PM</small>
+                        <h6 class="card-title my-1">The Grand Palace</h6>
+                        <div class="col-12">
+                            <div class="col-12 gap-1 d-flex align-items-center">
+                                <img class="me-1" src="./images/star.png" style="width: 13px" />
+                                <span class="card-text">4.8 (12 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="card custom-card mb-4 border-0 bg-light">
+                    <div class="popular-image-flex">
+                        <div class="popular-overlay-flex">
+                            <img src="https://picsum.photos/200/130" class="popular-img-flex" alt="..." />
+                            <small class="popular-lable-flex">Must See</small>
+                        </div>     
+                    </div>
+                    
+                    <div class="card-body">
+                        <small class="time-popular text-muted">Sep 28 10:00 AM - 1:00 PM</small>
+                        <h6 class="card-title my-1">The Grand Palace</h6>
+                        <div class="col-12">
+                            <div class="col-12 gap-1 d-flex align-items-center">
+                                <img class="me-1" src="./images/star.png" style="width: 13px" />
+                                <span class="card-text">4.8 (12 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="card custom-card mb-4 border-0 bg-light">
+                    <div class="popular-image-flex">
+                        <div class="popular-overlay-flex">
+                            <img src="https://picsum.photos/200/130" class="popular-img-flex" alt="..." />
+                            <small class="popular-lable-flex">Must See</small>
+                        </div>     
+                    </div>
+                    
+                    <div class="card-body">
+                        <small class="time-popular text-muted">Sep 28 10:00 AM - 1:00 PM</small>
+                        <h6 class="card-title my-1">The Grand Palace</h6>
+                        <div class="col-12">
+                            <div class="col-12 gap-1 d-flex align-items-center">
+                                <img class="me-1" src="./images/star.png" style="width: 13px" />
+                                <span class="card-text">4.8 (12 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="card custom-card mb-4 border-0 bg-light">
+                    <div class="popular-image-flex">
+                        <div class="popular-overlay-flex">
+                            <img src="https://picsum.photos/200/130" class="popular-img-flex" alt="..." />
+                            <small class="popular-lable-flex">Must See</small>
+                        </div>     
+                    </div>
+                    
+                    <div class="card-body">
+                        <small class="time-popular text-muted">Sep 28 10:00 AM - 1:00 PM</small>
+                        <h6 class="card-title my-1">The Grand Palace</h6>
+                        <div class="col-12">
+                            <div class="col-12 gap-1 d-flex align-items-center">
+                                <img class="me-1" src="./images/star.png" style="width: 13px" />
+                                <span class="card-text">4.8 (12 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ======================= Hidden gems in Bangkok ======================== -->
+    
+    <div class="container my-5 justify-content-center">
+        <h5 class="card-title text-center mb-5">Hidden gems in Bangkok</h5>
+        <div class="row row-cols-1 row-cols-md-2 g-4 d-flex justify-content-center">
+            <div class="col" style="width: 28rem;">
+                <div class="card hidden-gem border-0">
+                    <img src="https://picsum.photos/300/100" class="rounded-4" alt="...">
+                    <span class="text-light position-absolute" style="bottom: 30px; left: 20px;">Bangkok Trip</span>
+                    <span class="text-light position-absolute" style="bottom: 10px; left: 20px;">27 Sep, 2020</span>
+                </div>
+            </div>
+            <div class="col" style="width: 28rem;">
+                <div class="card hidden-gem border-0">
+                    <img src="https://picsum.photos/300/100" class="rounded-4" alt="...">
+                    <span class="text-light position-absolute" style="bottom: 30px; left: 20px;">Bangkok Trip</span>
+                    <span class="text-light position-absolute" style="bottom: 10px; left: 20px;">27 Sep, 2020</span>
+                </div>
+            </div>
+            <div class="col" style="width: 28rem;">
+                <div class="card hidden-gem border-0">
+                    <img src="https://picsum.photos/300/100" class="rounded-4" alt="...">
+                    <span class="text-light position-absolute" style="bottom: 30px; left: 20px;">Bangkok Trip</span>
+                    <span class="text-light position-absolute" style="bottom: 10px; left: 20px;">27 Sep, 2020</span>
+                </div>
+            </div>
+            <div class="col" style="width: 28rem;">
+                <div class="card hidden-gem position-relative border-0">
+                    <img src="https://picsum.photos/300/100" class="rounded-4" alt="...">
+                    <span class="text-light position-absolute" style="bottom: 30px; left: 20px;">Bangkok Trip</span>
+                    <span class="text-light position-absolute" style="bottom: 10px; left: 20px;">27 Sep, 2020</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ======================= Explore All ======================== -->
+    
+    <div class="container d-flex justify-content-center my-5 py-5">
+        <div class="row">
+            <button type="button" class="btn btn-primary rounded-5" style="width: 150px;">Explorer All</button>
+        </div>
+    </div>
+
+    <!-- ======================= Footer ======================== -->
+
+    <footer class="">
+        <div class="container text-center text-md-left">
+
+            <div class="row text-center text-md-left">
+                <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mt-3">
+                    <a href="#" style="width: fit-content">
+                        <img class="mb-4" src="./images/airtrav.png"/>
+                    </a>
+                    <p class="card-text mb-3 px-2">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem maxime veritatis modi, ipsa deleniti nam recusandae? Maiores, rem explicabo. Repellendus aperiam reiciendis incidunt ut tenetur perspiciatis voluptatem a sit atque?
+                    </p>
+                    <form class="subscribe mt-2">
+                        <input
+                            class="subscribe-email"
+                            type="text"
+                            placeholder="Enter your email"
+                        />
+                        <button type="submit" class="subscribe-button">
+                            <img src="./images/vector.png" />
+                        </button>
+                    </form>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mt-3">
+                    <h5 class="text-warning mb-4 font-weight-bold text-start">Services</h5>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Trip Planner</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Tour Planning</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Tour Guide</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Tour Package</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Tour advice</a>
+                    </p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-warning mb-4 font-weight-bold text-start">Support</h5>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Account</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Legal</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Contact</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Terms & Condition</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Privacy Policy</a>
+                    </p>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-warning mb-4 font-weight-bold text-start">Business</h5>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">Success</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark" style="text-decoration: none;">About Locato</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark text-end" style="text-decoration: none;">Blog</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark text-end" style="text-decoration: none;">Information</a>
+                    </p>
+                    <p class="text-start">
+                        <a href="#" class="text-dark text-end" style="text-decoration: none;">Travel Guide</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- ======================= HR ======================== -->
+
+            <div class="container">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-5 mb-5 border-bottom"></div>
+            </div>
+
+            <!-- ======================= COPYRIGHT ======================== -->
+            
+            <div class="row align-items-center text-center">
+                <div class="col-md-7 col-lg-7 col-xl-7 col-12 col-sm-12">
+                    <p class="text-muted text-md-start text-lg-start text-sm-center text-center">
+                        Copyright© 2024 All rights reserved by:
+                        <a href="#" style="text-decoration: none;">
+                        <strong class="text-warning">TonyTeos</strong>
+                        </a>
+                    </p>
+                </div>
+                <div class="col-md-5 col-lg-5 col-xl-5 col-12 col-sm-12">
+                    <div class="text-md-end text-lg-end text-sm-center text-center">
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                                <a href="#"><img src="./images/fb.png"></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#"><img src="./images/line.png"></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#"><img src="./images/tw.png"></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#"><img src="./images/in.png"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+    ></script>
+</body>
+</html>
